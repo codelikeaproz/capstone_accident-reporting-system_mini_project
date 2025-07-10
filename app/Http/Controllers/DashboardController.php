@@ -134,7 +134,7 @@ final class DashboardController extends Controller
         $data = [];
 
         foreach ($incidents as $incident) {
-            $labels[] = str_replace('_', ' ', title_case($incident->incident_type));
+                            $labels[] = str_replace('_', ' ', \Illuminate\Support\Str::title($incident->incident_type));
             $data[] = $incident->count;
         }
 

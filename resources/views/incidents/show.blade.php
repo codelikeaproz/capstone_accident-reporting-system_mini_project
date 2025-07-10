@@ -6,7 +6,7 @@
     <div class="row align-items-center">
         <div class="col">
             <h1 class="page-title">Incident #{{ $incident->incident_number }}</h1>
-            <p class="page-subtitle">{{ str_replace('_', ' ', title_case($incident->incident_type)) }} - {{ $incident->location }}</p>
+            <p class="page-subtitle">{{ str_replace('_', ' ', \Illuminate\Support\Str::title($incident->incident_type)) }} - {{ $incident->location }}</p>
         </div>
         <div class="col-auto">
             <div class="btn-group" role="group">
@@ -91,7 +91,7 @@
                             <label class="form-label text-muted">Incident Type</label>
                             <p class="mb-0">
                                 <span class="badge bg-light text-dark fs-6">
-                                    {{ str_replace('_', ' ', title_case($incident->incident_type)) }}
+                                    {{ str_replace('_', ' ', \Illuminate\Support\Str::title($incident->incident_type)) }}
                                 </span>
                             </p>
                         </div>
@@ -172,7 +172,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label text-muted">Road Condition</label>
-                                <p class="mb-0">{{ str_replace('_', ' ', title_case($incident->road_condition ?? 'Not specified')) }}</p>
+                                <p class="mb-0">{{ str_replace('_', ' ', \Illuminate\Support\Str::title($incident->road_condition ?? 'Not specified')) }}</p>
                             </div>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                                                     @elseif($victim->injury_status == 'critical_condition') bg-warning
                                                     @elseif($victim->injury_status == 'serious_injury') bg-info
                                                     @else bg-success @endif">
-                                                    {{ str_replace('_', ' ', title_case($victim->injury_status)) }}
+                                                    {{ str_replace('_', ' ', \Illuminate\Support\Str::title($victim->injury_status)) }}
                                                 </span>
                                             </div>
                                             <div class="btn-group btn-group-sm">

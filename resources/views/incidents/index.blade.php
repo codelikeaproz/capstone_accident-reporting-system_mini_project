@@ -167,7 +167,7 @@
                                     </td>
                                     <td>
                                         <span class="badge bg-light text-dark">
-                                            {{ str_replace('_', ' ', title_case($incident->incident_type)) }}
+                                                                                            {{ str_replace('_', ' ', \Illuminate\Support\Str::title($incident->incident_type)) }}
                                         </span>
                                     </td>
                                     <td>

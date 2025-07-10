@@ -248,7 +248,7 @@
                                         <tr>
                                             <td><strong>{{ $incident->incident_number }}</strong></td>
                                             <td>
-                                                <small>{{ str_replace('_', ' ', title_case($incident->incident_type)) }}</small>
+                                                <small>{{ str_replace('_', ' ', \Illuminate\Support\Str::title($incident->incident_type)) }}</small>
                                             </td>
                                             <td>
                                                 <div>
